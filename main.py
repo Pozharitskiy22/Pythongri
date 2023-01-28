@@ -745,4 +745,6 @@
 #
 # print()
 
-print "Hello"
+# print "Hello"
+
+print("Проверка репозитория")
