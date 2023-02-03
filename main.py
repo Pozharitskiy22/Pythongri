@@ -1200,6 +1200,10 @@ print()
 # display_info(23, "Ira")
 # display_info(age=23, name="Ira")
 
+
+#  Домашняя работа
+#  Задание №1
+
 # import math
 #
 #
@@ -1214,6 +1218,8 @@ print()
 # b = 16
 # r = 8
 # square(h, b, r, p)
+
+# Задание №2
 
 s = []
 p = []
