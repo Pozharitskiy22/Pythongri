@@ -333,8 +333,6 @@
 #         i += 1
 
 
-
-
 # 15.01
 
 
@@ -381,8 +379,6 @@
 # while i < 5:
 #     print(" " * i, "*")
 #     i += 1
-
-
 
 
 # for element in collection:
@@ -539,7 +535,6 @@
 # print()
 
 
-
 # 21.01
 
 
@@ -583,6 +578,8 @@
 # print(a)
 
 
+#  Методы списка
+
 # a = [6, 3, 0, 8, 2, 7]
 # print(a)
 # #  a[6] = 99
@@ -594,13 +591,9 @@
 # a.extend("add")
 # print(a)
 
-# s = []
-# n = int(input("Кол-во элементов списка: "))
-# for num in range(n):
-#     x = int(input("Введите число: "))
-#     s.append(x)
-# print(s)
-
+# a = []
+# a.extend([i**2 for i in range(1, 11)])
+# print(a)
 
 # s = []
 # n = int(input("Кол-во элементов списка: "))
@@ -609,6 +602,17 @@
 #     s.append(x)
 # print(s)
 
+
+# s = []
+# n = int(input("Кол-во элементов списка: "))
+# for num in range(n):
+#     x = int(input("Введите число кратное 3: "))
+#
+#     if x % 3 == 0:
+#         s.append(x)
+#     else:
+#         print(x, "не делится на 3 без остатка")
+# print(s)
 
 # a = [5, 9, 2, 1, 4, 3, 2, 4]
 # b = [4, 2, 1, 3, 7]
@@ -642,6 +646,8 @@
 # print(c)
 
 # a = [5, 9, 2, 1, 4, 3, 2, 4]
+# a.insert(2, 100) #  добавляет элемент списка (второй параметр - добавляет значение) в определённое место
+# (первый параметр - индекс), при этом элементы списка сдвигаются.
 # a.remove(1) #  удаляет первый попавшийся элемент из списка по значению
 # print(a)
 # last = a.pop() #  удаляет последний элемент из списка и возвращает удалённый элемент
@@ -704,7 +710,6 @@
 # b = sorted(a, reverse)
 
 
-
 # a = [int(input("-> ")) for i in range(int(input("n = ")))]
 # for i in range(len(a)):
 #     if a[i] < 0:
@@ -747,8 +752,485 @@
 
 # print "Hello"
 
-print("Проверка репозитория")
+# print("Проверка репозитория")
+#
+# print("Разобрался с github")
 
-print("Разобрался с github")
 
-print("Ешё раз разобрался")
+# 22.01
+
+#  Генерация случайных данных
+
+# import random
+#
+# print(random.random())
+# print(random.randint(0, 5))
+# print(random.randrange(5, 15, 2))
+
+# import random as r
+#
+# print(r.random())
+# print(r.randint(0, 5))
+# print(r.randrange(5, 15, 2))
+
+# from random import randint, randrange
+#
+#
+# print(randint(0, 5))
+# print(randrange(5, 15, 2))
+
+
+# from random import *
+#
+#
+# print(randint(0, 5))
+# print(randrange(5, 15, 2))
+# print(uniform(10.5, 25.5))
+# print(round(uniform(10.5, 25.5), 2))
+#
+# city_list = ['Москва', 'Новосибирск', 'Воронеж', 'Сочи', 'Екатеринбург']
+# print(choice(city_list))
+# print(choices(city_list, k=2))
+#
+#
+# s = [55, 66, 77, 88, 99]
+# print(choice(s))
+# print(choices(s, k=2))
+# shuffle(s)
+# print(s)
+
+# from random import randint
+#
+# mas = [i for i in range(10)]
+# print(mas)
+# mas = [0 for i in range(10)]
+# print(mas)
+# #  mas = [input("-->") for i in range(10)]
+# print(mas)
+# mas = [randint(0, 20) for i in range(5)]
+# print(mas)
+
+
+#  Функции агрегирования
+
+
+# lst = [16, 0, 4, 13, 15]
+# print(len(lst))
+# print(min(lst))
+# print(max(lst))
+# print(sum(lst))
+
+from random import randint
+
+# mas = [randint(0, 100) for i in range(10)]
+# print(mas)
+# max_1 = max(mas)
+# print(max_1)
+# mas.remove(max_1)
+# mas.insert(0, max_1)
+# print(mas)
+
+# mas = [randint(- 20, 20) for i in range(10)]
+# mas.sort(reverse=True)
+# print(mas)
+# max_1 = max(mas)
+# print(max_1)
+# mas.remove(max_1)
+# mas.insert(0, max_1)
+# print(mas)
+
+# mas = [randint(0, 100) for i in range(10)]
+#
+# print(mas)
+# min_1 = min(mas)
+# print(min_1)
+# ind = mas.index(min_1)
+#
+# del mas[:ind]
+# print(mas)
+
+
+# lst = []
+# if len(lst) == 0:
+#     print("Список пустой")
+# if not lst:
+#     print("!!!Список пустой")
+
+
+# n1 = int(input("Введите размер первого списка: "))
+# n2 = int(input("Введите размер второго списка: "))
+#
+# a = [randint(0, 10) for i in range(n1)]
+# b = [randint(0, 10) for i in range(n2)]
+#
+# print("Первый список:", a)
+# print("Второй список:", b)
+#
+# c = a + b
+# print("Третий список:", c)
+#
+# c = []
+# for i in range(len(a)):
+#     if a[i] not in c:
+#         c.append(a[i])
+# for i in range(len(b)):
+#     if b[i] not in c:
+#         c.append(b[i])
+# print("Элементы обоих списков без повторений:", c)
+# for i in range(len(a)):
+#     if a[i] in b and a[i] not in c:
+#         c.append(a[i])
+# print("Элементы общие для двух списков:", c)
+#
+# c = [min(a), min(b), max(a), max(b)]
+# print(c)
+
+
+# k = int(input("Размер списка: "))
+# s = []
+# while len(s) < k:
+#     w = randint(0, k-1)
+#     if w not in s:
+#         s.append(w)
+# print(s)
+
+
+# m = [
+#     [1, 2, 3, 4],
+#     [5, 6, 7, 8],
+#     [9, 10, 11, 12]
+# ]
+# # print(len(m))
+# print(m)
+# # print(m[1][2])
+#
+# # a = [2, 'Hello', 5]
+# # print(a[1][1])
+#
+# for row in range(len(m)):
+#     # print(m[row])
+#     for col in range(len(m[row])):
+#         print(m[row][col], end="\t")
+#     print()
+# print()
+#
+# for row in m:
+#     # print(row)
+#     for x in row:
+#         print(x ** 2, end="\t\t")
+#     print()
+
+
+# matrix = [[0 for x in range(5)]for y in range(3)]
+# print(matrix)
+# for row in matrix:
+#     for x in row:
+#         print(x, end="\t")
+#     print()
+
+# matrix = []
+#
+# for y in range(3):
+#     new_row = []
+#     for x in range(5):
+#         new_row.append(0)
+#     matrix.append(new_row)
+# print(matrix)
+# for row in matrix:
+#     for x in row:
+#         print(x, end="\t")
+#     print()
+
+
+# for x, y, z in [[1, 2, 1], [3, 4, 2], [5, 6, 3], [7, 8, 4]]:
+#     print(z, ")", x, "+", y, "=", x + y)
+
+
+# matrix = [[randint(-20, 10) for x in range(4)]for y in range(3)]
+# s = 0
+# for row in matrix:
+#     for x in row:
+#         print(x, end="\t")
+#         if x < 0:
+#             s += 1
+#     print()
+#
+# print(s)
+
+# n = int(input("n= "))
+# m = [[randint(0, 100) for x in range(n)]for y in range(n)]
+# for row in m:
+#     for x in row:
+#         print(x, end='\t')
+#     print()
+# t = m[0][0]
+# for k in range(n):
+#     if t > m[k][k]:
+#         t = m[k][k]
+# print(t)
+
+
+#  29.01
+
+# import math
+
+# num1 = math.sqrt(4)  #  Вычисляет корень квадратный числа
+# num2 = math.ceil(3.2)  #  округление в большую сторону
+# num3 = math.floor(3.8) #  округляет в меньшую сторону
+# num4 = math.pi #  Число Пи
+#
+# print(num1)
+# print(num2)
+# print(num3)
+# print(num4)
+#
+# print(dir(math))
+
+# from math import sqrt
+# import math as m
+# num1 = m.sqrt(4)
+# # num1 = sqrt(4)
+# print(num1)
+
+# from math import pi
+#
+# r = int(input("Введите радиус окружности: "))
+#
+# s = round(2 * pi * r, 2)
+# print(s)
+
+# import time
+# import locale
+# locale.setlocale(locale.LC_ALL, "ru")
+#
+# # print(dir(time))
+# s = time.time()
+# print(s)
+#
+# local = time.ctime()
+# print(local)
+#
+# res = time.localtime()
+# print(res)
+# print(res.tm_year, ".", res.tm_mon, sep="")
+#
+# print(time.strftime("%d.%m.%Y"))
+# print(time.strftime("Today is %B %d.%Y"))
+# print(time.strftime("Сегодня %B %d.%Y"))
+
+
+# pause = 2
+# print("Программа запущена")
+# time.sleep(pause)
+# print("Программа завершена")
+
+
+# text = input("Название напоминания: ")
+# t = float(input("Через сколько минут:"))
+# t = t * 60
+# time.sleep(t)
+# print(text)
+
+# start = time.time()
+# time.sleep(5)
+# finish = time.time()
+# res = finish - start
+# print(res)
+#
+# start = time.monotonic()
+# time.sleep(5)
+# finish = time.monotonic()
+# res = finish - start
+# print(res)
+print()
+
+# def hello(name):
+#     print("Hello,", name)
+#
+#
+# hello("Irina")
+# hello("Ivan")
+
+
+# def get_sum(a, b):
+#     print(a + b)
+#
+#
+# get_sum(2, 5)
+# get_sum('2', '5')
+#
+#
+# x = 2
+# y = 5
+#
+# get_sum(x, y)
+
+
+# def get_sum(a, b):
+#     print("Сумма:")
+#     return a + b
+#
+#
+# x = 2
+# y = 5
+# res = get_sum(x, y)
+#
+# print(res)
+
+
+# def symbol(count, a, b):
+#     for i in range(count):
+#         if i % 2 == 0:
+#             print(a, end="")
+#         else:
+#             print(b, end="")
+#     print()
+#
+#
+# symbol(9, "+", "-")
+# symbol(7, "X", "0")
+
+
+# def symbol(count, a, b):
+#     for i in range(count):
+#         if i % 2 == 0:
+#             print(a, end="")
+#         else:
+#             print(b, end="")
+#     print()
+#
+#
+# symbol(9, "+", "-")
+# symbol(7, "X", "0")
+
+# x = int(input("-->"))
+# y = int(input("-->"))
+#
+#
+# def res(a, b):
+#     if a > b:
+#         print(a + b)
+#     else:
+#         print(a - b)
+#
+#
+# res(x, y)
+
+# def cub(a):
+#     return a * a * a
+#
+#
+# for i in range(1, 11):
+#     print(i, "в кубе =", cub(i))
+
+
+# def change(lst):
+#     #  lst[0], lst[-1] = lst[-1], lst[0]
+#     a = lst.pop()  # последний элемент который мы удалили
+#     b = lst.pop(0)  # первый элемент, который мы удалили
+#     lst.append(b)
+#     lst.insert(0, a)
+#
+#     return lst
+#
+#
+# print(change([1, 2, 3]))
+# print(change([9, 12, 33, 54, 105]))
+# print(change(['c', 'л', 'о', 'н']))
+
+
+# def func(x, y):
+#     if x > y:
+#         return True
+#     else:
+#         return False
+#
+#
+# print(func(10, 5))
+# print(func(5, 10))
+# a = 10
+# b = 5
+#
+# if func(a, b):
+#     print("Первое число больше второго")
+# else:
+#     print("Второе число больше первого")
+
+
+# def check_password(password):
+#     has_upper = False
+#     has_lower = False
+#     has_num = False
+#
+#     for ch in password:
+#         if "A" <= ch <= "Z":
+#             has_upper = True
+#         elif "a" <= ch <= "z":
+#             has_lower = True
+#         elif "0" <= ch <= "9":
+#             has_num = True
+#
+#     if len(password) >= 8 and has_upper:
+#         return True
+#     return False
+#
+#
+# p = input("Введите пароль: ")
+# if check_password(p):
+#     print("Надёжный пароль")
+# else:
+#     print("Это не надёжный пароль")
+
+
+# def get_sum(a=0, b=0, c=0, d=0):
+#     return a + b + c + d
+#
+#
+# print(get_sum(1, 5, 2, 7))
+# print(get_sum(1, 5, d=2))
+# print(get_sum())
+# print(get_sum(d=2, a=5))
+
+
+# def display_info(name, age):
+#     print("Name:", name, "\nAge:", age, end="\n\n")
+#
+#
+# display_info("Ira", 23)
+# display_info(23, "Ira")
+# display_info(age=23, name="Ira")
+
+# import math
+#
+#
+# def square(h, b, r, p):
+#     print("Площадь прямоугольника:", h * b)
+#     print("Площадь треугольника:", 0.5 * h * b)
+#     print("Площадь круга:", round((p * r ** 2), 2))
+#
+#
+# p = math.pi
+# h = 10
+# b = 16
+# r = 8
+# square(h, b, r, p)
+
+s = []
+p = []
+
+
+a = [6, 3, 8, 5, 7, 9, 3, 6, 5, 13, 1]
+for i in a:
+    sl = 0
+    for j in range(1, 1000):
+        if i % j == 0:
+            sl += 1
+    if sl == 2:
+        p.append(i)
+    elif sl > 2:
+        s.append(i)
+
+# print(p)
+# print(s)
+print("Min: ", min(p))
+print("Max:", max(s))

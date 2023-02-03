@@ -1,1 +1,6 @@
 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
+
+git push -u origin master
+
+https://github.com/Pozharitskiy22/Pythongri/blob/84bc843936a50157bd0452fb16bf14c1c38dce16/main.py#L752
+
