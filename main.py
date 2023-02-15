@@ -820,7 +820,7 @@
 # print(max(lst))
 # print(sum(lst))
 
-from random import randint
+#  from random import randint
 
 # mas = [randint(0, 100) for i in range(10)]
 # print(mas)
@@ -1042,7 +1042,8 @@ from random import randint
 # finish = time.monotonic()
 # res = finish - start
 # print(res)
-print()
+# print()
+
 
 # def hello(name):
 #     print("Hello,", name)
@@ -1221,22 +1222,265 @@ print()
 
 # Задание №2
 
-s = []
-p = []
+# s = []
+# p = []
+#
+#
+# a = [6, 3, 8, 5, 7, 9, 3, 6, 5, 13, 1]
+# for i in a:
+#     sl = 0
+#     for j in range(1, 1000):
+#         if i % j == 0:
+#             sl += 1
+#     if sl == 2:
+#         p.append(i)
+#     elif sl > 2:
+#         s.append(i)
+#
+# # print(p)
+# # print(s)
+# print("Min: ", min(p))
+# print("Max:", max(s))
 
 
-a = [6, 3, 8, 5, 7, 9, 3, 6, 5, 13, 1]
-for i in a:
-    sl = 0
-    for j in range(1, 1000):
-        if i % j == 0:
-            sl += 1
-    if sl == 2:
-        p.append(i)
-    elif sl > 2:
-        s.append(i)
+# 04.02
 
-# print(p)
+
+# def summa(a, b, c):
+#     sm = a + b + c
+#     avg = sm / 3
+#     return avg
+#
+#
+# a = summa(1, 2, 3)
+# print(a ** 2)
+
+
+# def digits_sum(n, even=True):
+#     s = 0
+#     while n > 0:
+#         cur_digit = n % 10
+#         if even and cur_digit % 2 == 0:
+#             s += cur_digit
+#         elif not even and cur_digit % 2:
+#             s += cur_digit
+#         #  print(cur_digit)
+#         n //= 10
+#
+#     return s
+#
+#
+# print("Сумма чётных цифр:")
+# print(digits_sum(9874023))
+# print(digits_sum(38271))
+# print(digits_sum(123456789))
+# print("Сумма нечётных цифр:")
+# print(digits_sum(9874023, even=False))
+# print(digits_sum(38271, even=False))
+# print(digits_sum(123456789, even=False))
+
+
+# lt1 = [1, 2, 3]
+# lt2 = [1, 2, 3]
+# print(lt1 == lt2)
+# print(lt1 is lt2)
+# print(id(lt1))
+# print(id(lt2))
+#
+# a = 2
+# b = 2
+#
+# print(a == b)
+# print(a is b)
+# print(id(a))
+# print(id(b))
+#
+# lt1 = [1, 2, 3]
+# print(id(lt1))
+# lt1.append(4)
+# print(lt1)
+# print(id(lt1))
+# lt1[1] = "Hello"
+# print(lt1)
+# print(id(lt1))
+
+
+# s = "Hello "
+# print(id(s))
+# s += 'World'  # s = s + "World"
 # print(s)
-print("Min: ", min(p))
-print("Max:", max(s))
+# print(id(s))
+
+
+# def add_number(n):
+#     print(n, "=", id(n))
+#     n += 1
+#     print(n, "=", id(n))
+#
+#
+# x = 1
+# print("x:", x, "=", id(x))
+# add_number(x)
+# print("x:", x, "=", id(x))
+
+# def add_number(n):
+#     print(n, "=", id(n))
+#     n += [4]
+#     print(n, "=", id(n))
+#
+#
+# x = [1, 2, 3]
+# print("x:", x, "=", id(x))
+# add_number(x)
+# print("x:", x, "=", id(x))
+
+
+#  Картеж (tuple)
+
+# lst = [1, 2, 3]
+# tpl = (1, 2, 3)
+# print(lst.__sizeof__())
+# print(tpl.__sizeof__())
+
+# print(type(tpl))
+
+# a = 1, 2, 3, 4, 5
+# print(type(a))
+# b = tuple((1, 2, 3, 4, 5))
+# print(type(b))
+# print(b)
+
+
+# tpl = (1, 2, 3, 4, 5, 6, 7)
+# print(tpl)
+# print(tpl[2])
+# # tpl[2] = 10
+# print(tpl)
+# print(tpl[1:3])
+
+
+from random import randint
+
+# s = [input("--> ") for i in range(3)]
+# s = tuple(input("--> ") for i in range(3))
+# s = tuple(randint(1, 30) for i in range(10))
+# print(s)
+# s = tuple(2 ** i for i in range(1, 13))
+# print(s)
+
+
+# t1 = tuple("hello")
+# t2 = tuple('world')
+# t3 = t1 + t2
+# print(t3)
+# print(t3 * 2)
+# print(len(t3))
+# print(t3.count(('l')))
+# print(t3.count(('a')))
+# print(t3.index('l', 4))
+# if 'l' in t3:
+#     print(t3.index('l'))
+# else:
+#     print("Такого символа нет")
+
+
+# def slicer(tpl, el):
+#     if el in tpl:
+#         if tpl.count(el) > 1:
+#             first = tpl.index(el)
+#             second = tpl.index(el, first + 1)
+#             return tpl[first:second + 1]
+#         else:
+#             return tpl[tpl.index(el):]
+#     else:
+#         return ()
+#
+#
+# print(slicer((1, 2, 3), 8))
+# print(slicer((1, 8, 3, 4, 8, 8, 9, 2), 8))
+# print(slicer((1, 2, 8, 5, 1, 2, 9), 8))
+
+# def slicer(a, b):
+#     x = tuple(randint(a, b) for i in range(10))
+#     return x
+#
+#
+# tpl1 = slicer(0, 5)
+# tpl2 = slicer(-5, 0)
+# tpl3 = tpl1 + tpl2
+# print(tpl1)
+# print(tpl2)
+# print(tpl3)
+# print(tpl3.count(0))
+
+# Домашнее задание
+# Задача 1
+
+# a = ('ab', 'abcd', 'cde', 'abc', 'def')
+#
+# s = input("s = ")
+# if s in a:
+#     print("Yes")
+# else:
+#     print("Try again")
+
+# Задача 2
+
+c = []
+s = tuple(input("Введите по порядку, без пробелов, элементы кортежа: "))
+print(s)
+for i in s:
+    if i not in c:
+        c.append(i)
+# print(c)
+for i in c:
+    print("Количество ", i, "=", (s.count(i)))
+
+
+#  05.02
+
+
+# users = {"Tom", "Alice", "Bob"}
+# a = users.pop()
+# print(a)
+
+
+#  frozenset (замороженное множество)
+
+# s = frozenset([1, 2, 3, 4, 5])
+# print(s)
+# a = frozenset("hello")
+# print(a)
+
+#  Словарь (dict)
+
+# s = [1, 2, 3]
+# d = {"one": 1, "two": 2, "three": 3}
+# print(s[1])
+# print(d["two"])
+
+# d = {"one": 1, "two": 2}
+# print(d)
+# print(type(d))
+#
+# d1 = dict(one=1, two=2)
+# print(d1)
+
+
+# d = {"one": 1, "two": 2, "three": 3}
+# print(list(d))
+# lst = ['one', 'two', 'three']
+# # print(dict(lst))
+#
+# a = [
+#     ('one', 1),
+#     ('two', 2),
+#     ('three', 3),
+# ]
+# print(dict(a))
+
+# d = {"one": 45, 0: "text", (1, 2, 3): 'Картеж', 43: [2, 3, 6, 7], 0: "text111"}
+# print(d)
+
+# d = {i: i ** 2 for i in range(2, 7)}
+# print(d)
